@@ -98,3 +98,7 @@
   (set-fill-column 100)
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
+
+
+;; git
+(setq-hook! 'git-commit-mode-hook git-commit-summary-max-length 68)
