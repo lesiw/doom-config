@@ -102,3 +102,7 @@
 
 ;; git
 (setq-hook! 'git-commit-mode-hook git-commit-summary-max-length 68)
+
+
+;; optional per-system config
+(when (file-exists-p (concat doom-user-dir "system.el")) (load! "system"))
