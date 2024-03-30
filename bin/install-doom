@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if [ -d "$HOME/.config/doom" ]
+then
+    git -C "$HOME/.config/doom" pull --rebase
+else
+    if ssh -o ConnectTimeout=3 -T git@github.com </dev/null 2>&1 | grep "^Hi lesiw!" > /dev/null
+    then
+        git clone ssh://git@github.com/lesiw/doom-config "$HOME/.config/doom" -o github
+    else
+        git clone https://github.com/lesiw/doom-config "$HOME/.config/doom" -o github
+    fi
+fi
+
+if [ -d "$HOME/.config/emacs" ] && [ ! -d "$HOME/.config/emacs/.git" ]
+then
+    mv "$HOME/.config/emacs" "$HOME/.config/emacs.bak"
+fi
+
+if [ -d "$HOME/.config/emacs" ]
+then
+    git -C "$HOME/.config/emacs" pull --rebase
+    yes | "$HOME/.config/emacs/bin/doom" upgrade
+else
+    git clone https://github.com/hlissner/doom-emacs "$HOME/.config/emacs" -o github
+fi
+
+yes | "$HOME/.config/emacs/bin/doom" sync
+yes | "$HOME/.config/emacs/bin/doom" upgrade
