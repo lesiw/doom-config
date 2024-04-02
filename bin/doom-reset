@@ -1,0 +1,12 @@
+#!/bin/sh
+
+find ~/.config/emacs/.local -mindepth 1 \
+    -not -path "*/cache*" \
+    -not -path "*/etc*" \
+    -prune -exec rm -rf "{}" \;
+find ~/.config/emacs/ -mindepth 1 -name '*.elc' -exec rm -f "{}" \;
+find ~/.config/emacs/ -mindepth 1 -name '*.eln' -exec rm -f "{}" \;
+git -C ~/.config/emacs reset --hard HEAD
+git -C ~/.config/emacs pull
+yes | "$HOME/.config/emacs/bin/doom" install
+"$HOME/.config/emacs/bin/doom" sync
