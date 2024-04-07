@@ -112,16 +112,19 @@
 (after! org
   (setq org-todo-keywords
         '((sequence
-           "STRT(s)"  ; A task that is in progress
-           "TODO(t)"  ; A task that needs doing & is ready to do
-           "WAIT(w)"  ; Something external is holding up this task
-           "HOLD(h)"  ; This task is paused/on hold because of me
+           "NOTE(n)"
+           "STRT(s)"
+           "TODO(t)"
+           "WAIT(w)"
+           "HOLD(h)"
            "|"
-           "DONE(d)"  ; Task successfully completed
-           "KILL(k)") ; Task was cancelled, aborted or is no longer applicable
+           "DONE(d)"
+           "KILL(k)")
           )
         org-todo-keyword-faces
-        '(("STRT" . +org-todo-active)
+        '(
+          ("NOTE" . +org-todo-idea)
+          ("STRT" . +org-todo-onhold)
           ("WAIT" . +org-todo-onhold)
           ("HOLD" . +org-todo-onhold)))
   (setq org-log-done t)
