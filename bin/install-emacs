@@ -12,7 +12,7 @@ sudo apt update
 sudo apt install -y \
     curl \
     markdown
-sudo apt build-dep emacs -y
+sudo /bin/sh -c 'export DEBIAN_FRONTEND=noninteractive; apt build-dep emacs -y'
 
 if [ $# -gt 0 ]
 then
