@@ -11,6 +11,7 @@ fi
 sudo apt update
 sudo apt install -y \
     curl \
+    libgccjit-10-dev \
     markdown
 sudo /bin/sh -c 'export DEBIAN_FRONTEND=noninteractive; apt build-dep emacs -y'
 
