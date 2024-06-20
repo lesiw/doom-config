@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "Christopher Lesiw"
-      user-mail-address "chris@chrislesiw.com")
+      user-mail-address "chris.lesiw@datadoghq.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -94,8 +94,8 @@
 
 ;; go
 (add-hook! 'go-mode-hook
-  (setq tab-width 8)
-  (set-fill-column 100)
+  (setq tab-width 4)
+  (set-fill-column 80)
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 
