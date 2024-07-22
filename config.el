@@ -129,3 +129,9 @@
           ("HOLD" . +org-todo-onhold)))
   (setq org-log-done t)
   (setq org-log-done-with-time nil))
+
+
+;; lsp
+(after! lsp-ui
+  (setq lsp-ui-sideline-diagnostic-max-line-length 80)
+  (setq lsp-ui-sideline-diagnostic-max-lines 4))
