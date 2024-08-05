@@ -129,3 +129,13 @@
           ("HOLD" . +org-todo-onhold)))
   (setq org-log-done t)
   (setq org-log-done-with-time nil))
+
+
+;; magit
+(after! magit
+  (setq magit-status-headers-hook
+        '(magit-insert-error-header
+          magit-insert-diff-filter-header
+          magit-insert-head-branch-header
+          magit-insert-upstream-branch-header
+          magit-insert-push-branch-header)))
