@@ -132,6 +132,8 @@
 
 
 ;; lsp
+(after! lsp-mode
+  (setq lsp-enable-links nil))
 (after! lsp-ui
   (setq lsp-ui-sideline-diagnostic-max-line-length 80)
   (setq lsp-ui-sideline-diagnostic-max-lines 4))
