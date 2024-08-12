@@ -137,3 +137,7 @@
 (after! lsp-ui
   (setq lsp-ui-sideline-diagnostic-max-line-length 80)
   (setq lsp-ui-sideline-diagnostic-max-lines 4))
+
+
+;; almost-mono-themes
+(load! "almost-mono-themes")
