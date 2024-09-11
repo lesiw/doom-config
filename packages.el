@@ -50,3 +50,4 @@
 ;; (unpin! t)
 (package! protobuf-mode)
 (package! terraform-mode)
+(package! bazel :recipe (:host github :repo "bazelbuild/emacs-bazel-mode"))
