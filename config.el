@@ -141,3 +141,9 @@
 
 ;; almost-mono-themes
 (load! "almost-mono-themes")
+
+
+;; flycheck
+(use-package! flycheck
+  :config (setq-default flycheck-disabled-checkers
+                        '(emacs-lisp emacs-lisp-checkdoc)))
